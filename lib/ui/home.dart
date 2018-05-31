@@ -23,8 +23,8 @@ class HomeState extends State<Home> {
       if (_pesoController.text.isEmpty || _alturaController.text.isEmpty) {
         _imc = 0.0;
       } else {
-        peso = double.parse(_pesoController.text.toString());
-        altura = double.parse(_alturaController.text.toString());
+        peso = double.parse(_pesoController.text.toString().replaceAll(',', '.'));
+        altura = double.parse(_alturaController.text.toString().replaceAll(',', '.'));
 
         _imc = (peso / (altura * altura));
       }
